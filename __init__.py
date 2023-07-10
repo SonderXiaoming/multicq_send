@@ -53,7 +53,7 @@ async def group_send(group, msg):
         if not (bid:= group_cache.get(str(group), 0)):
             for sid in bots:
                 try:
-                    await bot.send_group_msg(self_id = bid, group_id=int(group), message = msg)
+                    await bot.send_group_msg(self_id = sid, group_id=int(group), message = msg)
                     group_cache[group] = sid
                     print(config)
                     savef(config, FILEPATH)
